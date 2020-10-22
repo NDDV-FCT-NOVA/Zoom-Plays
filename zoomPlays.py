@@ -32,6 +32,7 @@ V = 0x2F
 B = 0x30
 N = 0x31
 M = 0x32
+SPACE = 0x39
 
 # Capabilities
 capabilities = DesiredCapabilities.FIREFOX
@@ -47,9 +48,20 @@ c = ''
 def stringToKeyCode(s):
     switcher = {
         'w': W,
+        'up': W,
+        'cima': W,
         'a': A,
-        's': S, 
-        'd': D 
+        'left': A,
+        'esquerda': A,
+        's': S,
+        'down': S,
+        'baixo': S, 
+        'd': D,
+        'right': D,
+        'direita': D,
+        'dispara': SPACE,
+        'disparar': SPACE,
+        'shoot': SPACE
     }
     return switcher.get(s, 0x00)
 
