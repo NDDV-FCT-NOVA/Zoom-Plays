@@ -34,12 +34,11 @@ N = 0x31
 M = 0x32
 SPACE = 0x39
 
-# Capabilities
 capabilities = DesiredCapabilities.FIREFOX
 capabilities['loggingPrefs'] = { 'browser':'ALL'}
 
 driver = webdriver.Firefox(desired_capabilities=capabilities)
-driver.get("https://zoom.us/j/98469567104?pwd=R2FhVGVSU1drY0ZtL0JIOHU1SUNZUT09")
+driver.get("https://zoom.us/j/97264774025?pwd=TXZLeTdvS21QOUc5UE5RVVAxYkZadz09")
 
 meetingPw = 'Tt0uY5'
     
@@ -61,12 +60,15 @@ def stringToKeyCode(s):
         'direita': D,
         'dispara': SPACE,
         'disparar': SPACE,
-        'shoot': SPACE
+        'shoot': SPACE,
+        'space': SPACE,
+        'z': SPACE,
+        'f': SPACE
     }
     return switcher.get(s, 0x00)
 
 def printThing():
-    threading.Timer(1.0, printThing).start()
+    threading.Timer(0.1, printThing).start()
     print("-----------------------")
     elementName = driver.find_elements_by_class_name("chat-item__chat-info-msg")
     # print(elementName[len(elementName)-1].text)
@@ -74,7 +76,6 @@ def printThing():
     c = cz[-1].strip(' \t\n\r').lower()
     print(c)
     keyCode = stringToKeyCode(c)
-    keypresser2.PressAndHoldKey(keyCode, 0.3)
+    keypresser2.PressAndHoldKey(keyCode, 0.1)
 
 printThing()
-
