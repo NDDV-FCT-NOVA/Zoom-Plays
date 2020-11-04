@@ -38,9 +38,9 @@ capabilities = DesiredCapabilities.FIREFOX
 capabilities['loggingPrefs'] = { 'browser':'ALL'}
 
 driver = webdriver.Firefox(desired_capabilities=capabilities)
-driver.get("https://zoom.us/j/97264774025?pwd=TXZLeTdvS21QOUc5UE5RVVAxYkZadz09")
 
-meetingPw = 'Tt0uY5'
+#Link for meeting goes here (you can also just type it in the browser)
+driver.get("https://us02web.zoom.us/j/84835320860?pwd=S2ZiV3YxVDI4Q1BaWUtNRkVRVnRodz09#success")
     
 c = ''
 
